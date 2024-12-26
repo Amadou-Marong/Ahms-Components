@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Example</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="sidebar-container">
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <img id="avatar" src="default-avatar.png" alt="User Avatar" class="avatar">
+        <div id="sidebar-title" class="sidebar-title">
+          <h1 class="portal-name">EMS Portal</h1>
+          <p id="user-name" class="user-name">John Doe</p>
+        </div>
+        <button id="toggle-button" class="toggle-button">→</button>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <!-- Menu items will be inserted dynamically -->
+      </nav>
+
+      <button id="logout-button" class="logout-button">
+        Logout
+      </button>
+    </div>
+
+    <div id="main-content" class="main-content">
+      <!-- Main content goes here -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

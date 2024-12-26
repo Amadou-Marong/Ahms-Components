@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => lucide.createIcons());
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="flex">
+        <!-- Sidebar -->
+        <div id="sidebar" class="h-screen fixed top-0 left-0 bg-white w-56 transition-all duration-300 z-30 flex flex-col border-r border-gray-200">
+            <div class="p-4 relative">
+                <div class="flex items-center space-x-3">
+                    <img src="https://images.unsplash.com/photo-1608086042577-50e786b68c84?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="h-8 w-8 rounded-full"/>
+                    <div class="sidebar-text">
+                        <h1 class="text-lg font-bold">EMS Portal</h1>
+                        <p class="text-xs text-gray-400">imam ahmad</p>
+                    </div>
+                    <button id="toggle-btn" class="absolute text-blue-500 bg-white rounded-full p-2 -right-4 border">
+                        <svg data-lucide="menu" class="w-5 h-5 text-gray-600 "></svg>
+                    </button>
+                </div>
+
+                <nav class="space-y-1 py-8">
+                    <a href="" 
+                    class="flex items-center space-x-2 p-2 text-gray-600 hover:bg-gray-800 hover:text-white rounded-lg"
+                    data-tooltip-target="tooltip-dashboard" 
+                    data-tooltip-trigger="hover">
+                        <svg data-lucide="home" class="h-5 w-5"></svg>
+                        <span class="text-sm sidebar-text">Dashboard</span>
+                    </a>
+                    <div id="tooltip-dashboard" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                        Go to Dashboard
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                
+                    <a href="" 
+                    class="flex items-center space-x-2 p-2 text-gray-600 hover:bg-gray-800 hover:text-white rounded-lg"
+                    data-tooltip-target="tooltip-leave-management" 
+                    data-tooltip-trigger="hover">
+                        <svg data-lucide="calendar" class="h-5 w-5"></svg>
+                        <span class="text-sm sidebar-text">Leave Management</span>
+                    </a>
+                    <div id="tooltip-leave-management" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                        Manage your leaves
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                
+                    <a href="" 
+                    class="flex items-center space-x-2 p-2 text-gray-600 hover:bg-gray-800 hover:text-white rounded-lg"
+                    data-tooltip-target="tooltip-my-leaves" 
+                    data-tooltip-trigger="hover">
+                        <svg data-lucide="clipboard-list" class="h-5 w-5"></svg>
+                        <span class="text-sm sidebar-text">My Leaves</span>
+                    </a>
+                    <div id="tooltip-my-leaves" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                        View your leaves
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                
+                    <a href="" 
+                    class="flex items-center space-x-2 p-2 text-gray-600 hover:bg-gray-800 hover:text-white rounded-lg"
+                    data-tooltip-target="tooltip-settings" 
+                    data-tooltip-trigger="hover">
+                        <svg data-lucide="settings" class="h-5 w-5"></svg>
+                        <span class="text-sm sidebar-text">Settings</span>
+                    </a>
+                    <div id="tooltip-settings" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                        Configure settings
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                </nav>
+                
+                <button class="flex items-center space-x-3 p-2 text-gray-600 hover:text-white hover:bg-gray-800 p-2 rounded-lg" 
+                    data-tooltip-target="tooltip-logout" 
+                    data-tooltip-trigger="hover"></button>
+                    <svg data-lucide="log-out" class="h-5 w-5"></svg>
+                    <span class="text-sm sidebar-text">Logout</span>
+                </button>
+                <div id="tooltip-logout" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                    Log out of your account
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main contents -->
+        <div id="main" class="transition-all duration-300 ml-56 w-full">
+            <main class="p-4 w-full">
+                <div class="p-6">
+                    <h2 class="text-gray-500 font-bold">Dashboard</h2>
+                    <!-- Stats display -->
+                    <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+                        <div class="bg-white p-4 rounded-lg shadow-md flex items-center">
+                            <div class="p-4 rounded-lg bg-blue-500">
+                                <svg data-lucide="users" class="text white"></svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-gray-500 font-bold">Total Employees</h3>
+                                <p class="text-3xl font-bold">100</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md flex items-center">
+                            <div class="p-4 rounded-lg bg-green-500">
+                                <svg data-lucide="calendar" class="text white"></svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-gray-500 font-bold">Total Leaves</h3>
+                                <p class="text-3xl font-bold">200</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md flex items-center">
+                            <div class="p-4 rounded-lg bg-red-500">
+                                <svg data-lucide="clock" class="text white"></svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-gray-500 font-bold">Pending Leaves</h3>
+                                <p class="text-3xl font-bold">150</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md flex items-center">
+                            <div class="p-4 rounded-lg bg-green-500">
+                                <svg data-lucide="check" class="text white"></svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-gray-500 font-bold">Approved Leaves</h3>
+                                <p class="text-3xl font-bold">100</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Leave Analytics -->
+                   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Bar Chart -->
+                        <div class="mt-8">
+                            <h2 class="text-gray-500 font-bold">Leave Analytics</h2>
+                            <div class="bg-white p-4 rounded-lg shadow-md mt-4">
+                                <canvas id="barChart" width="400" height="400"></canvas>
+                            </div>
+
+                            <script>
+                                const ctx = document.getElementById('barChart').getContext('2d');
+                                const barChart = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                                        datasets: [{
+                                            label: 'Leaves',
+                                            data: [10, 20, 30, 40, 50, 60, 70],
+                                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                            borderColor: 'rgba(54, 162, 235, 1)',
+                                            borderWidth: 1
+                                        }]
+                                    },
+                                    options: {
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    }
+                                });
+    
+                            </script>
+                        </div>
+                        <!-- Pie Chart -->
+                        <div class="mt-8">
+                            <h2 class="text-gray-500 font-bold">Leave Analytics</h2>
+                            <div class="bg-white p-4 rounded-lg shadow-md mt-4">
+                                <canvas id="piChart" width="400" height="400"></canvas>
+                            </div>
+                            <script>
+                                const ctx2 = document.getElementById('piChart').getContext('2d');
+                                const pieChart = new Chart(
+                            ctx2, {
+                                type: 'pie',
+                                data: {
+                                    labels: ['Approved', 'Pending', 'Rejected'],
+                                    datasets: [{
+                                        label: 'Leave Status',
+                                        data: [50, 30, 20],
+                                        backgroundColor: [
+                                            'rgba(75, 192, 192, 0.2)',
+                                            'rgba(255, 206, 86, 0.2)',
+                                            'rgba(255, 99, 132, 0.2)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(75, 192, 192, 1)',
+                                            'rgba(255, 206, 86, 1)',
+                                            'rgba(255, 99, 132, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    responsive: true,
+                                    plugins: {
+                                        legend: {
+                                            position: 'top',
+                                        },
+                                        tooltip: {
+                                            callbacks: {
+                                                label: function(context) {
+                                                    let label = context.label || '';
+                                                    if (label) {
+                                                        label += ': ';
+                                                    }
+                                                    label += context.raw;
+                                                    return label;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            });
+                            </script>
+                        </div>
+                   </div>
+                    
+                    <!-- Recent Leaves -->
+                    <div class="mt-8">
+                        <h2 class="text-gray-500 font-bold">Recent Leaves</h2>
+                        <div class="bg-white p-4 rounded-lg shadow-md mt-4">
+                            <table class="w-full">
+                                <thead>
+                                    <tr>
+                                        <th class="text-left">Employee</th>
+                                        <th class="text-left">Leave Type</th>
+                                        <th class="text-left">Start Date</th>
+                                        <th class="text-left">End Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>John Doe</td>
+                                        <td>Sick Leave</td>
+                                        <td>2021-01-01</td>
+                                        <td>2021-01-02</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jane Doe</td>
+                                        <td>Annual Leave</td>
+                                        <td>2021-01-01</td>
+                                        <td>2021-01-02</td>
+                                    </tr>
+                                    <tr>
+                                        <td>John Smith</td>
+                                        <td>Maternity Leave</td>
+                                        <td>2021-01-01</td>
+                                        <td>2021-01-02</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jane Smith</td>
+                                        <td>Study Leave</td>
+                                        <td>2021-01-01</td>
+                                        <td>2021-01-02</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>    
+
+                </div>
+            </main> 
+        </div>
+    </div>
+<script>
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('toggle-btn');
+    const sidebarTxts = document.querySelectorAll('.sidebar-text');
+    const mainContent = document.getElementById('main');
+
+    toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('w-56');
+        sidebar.classList.toggle('w-20');
+
+        
+        // mainContent.classList.toggle('ml-16');
+        mainContent.classList.toggle('ml-16');
+        // mainContent.classList.toggle('ml-72');
+
+        sidebarTxts.forEach((text) => {
+            text.classList.toggle('hidden');
+        });
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</body>
+</html>

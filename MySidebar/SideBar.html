@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar</title>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => lucide.createIcons());
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="flex">
+    <!-- Sidebar -->
+    <div id="sidebar" class="h-screen bg-white border-r border-gray-200 flex flex-col transition-all duration-300 w-56">
+      <div class="p-4 relative">
+        <div class="flex items-center mb-8">
+          <img src="https://via.placeholder.com/40" alt="User Avatar" class="h-8 w-8 rounded-full">
+          <div class="ml-3">
+            <h1 class="text-lg font-bold">EMS Portal</h1>
+            <p class="text-xs text-gray-400">John Doe</p>
+          </div>
+          <button id="toggle-sidebar" class="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-gray-100 border border-gray-200 rounded-full p-1">
+            <svg data-lucide="chevron-left" class="w-5 h-5 text-gray-600"></svg>
+          </button>
+        </div>
+        
+        <nav class="space-y-1">
+          <a href="#" class="flex items-center space-x-3 p-2 rounded-lg text-gray-600 hover:bg-gray-800 hover:text-white">
+            <svg data-lucide="home" class="w-5 h-5"></svg>
+            <span class="text-sm">Dashboard</span>
+          </a>
+          <a href="#" class="flex items-center space-x-3 p-2 rounded-lg text-gray-600 hover:bg-gray-800 hover:text-white">
+            <svg data-lucide="calendar" class="w-5 h-5"></svg>
+            <span class="text-sm">Leave Management</span>
+          </a>
+          <a href="#" class="flex items-center space-x-3 p-2 rounded-lg text-gray-600 hover:bg-gray-800 hover:text-white">
+            <svg data-lucide="clipboard-list" class="w-5 h-5"></svg>
+            <span class="text-sm">My Leaves</span>
+          </a>
+          <a href="#" class="flex items-center space-x-3 p-2 rounded-lg text-gray-600 hover:bg-gray-800 hover:text-white">
+            <svg data-lucide="settings" class="w-5 h-5"></svg>
+            <span class="text-sm">Settings</span>
+          </a>
+        </nav>
+
+        <button class="flex items-center space-x-3 p-2 rounded-lg text-gray-600 hover:bg-gray-800 hover:text-white mt-auto">
+          <svg data-lucide="log-out" class="w-5 h-5"></svg>
+          <span class="text-sm">Logout</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="content" class="flex-1 p-4 transition-all duration-300">
+      <h1 class="text-2xl font-bold">Main Content</h1>
+      <p>Here is the main content area.</p>
+    </div>
+  </div>
+
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const toggleButton = document.getElementById('toggle-sidebar');
+
+    toggleButton.addEventListener('click', () => {
+      sidebar.classList.toggle('w-56');
+      sidebar.classList.toggle('w-20');
+    });
+  </script>
+</body>
+</html>

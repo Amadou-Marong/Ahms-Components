@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Example</title>
+  <style>
+    /* CSS styling for the sidebar */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+
+    .sidebar {
+      height: 100vh;
+      background-color: #ffffff;
+      color: #333333;
+      border-right: 1px solid #ddd;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transition: width 0.3s ease;
+      overflow: hidden;
+    }
+
+    .sidebar.expanded {
+      width: 220px;
+    }
+
+    .sidebar.collapsed {
+      width: 60px;
+    }
+
+    .sidebar .avatar {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .sidebar .avatar img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .sidebar .avatar h1 {
+      margin-left: 10px;
+      font-size: 1rem;
+      display: inline-block;
+    }
+
+    .menu-item {
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #333333;
+      transition: background-color 0.3s ease;
+    }
+
+    .menu-item:hover {
+      background-color: #f0f0f0;
+    }
+
+    .menu-item span {
+      margin-left: 10px;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="sidebar" class="sidebar expanded">
+    <div class="avatar">
+      <img src="https://via.placeholder.com/40" alt="Avatar">
+      <h1 id="sidebar-title">EMS Portal</h1>
+      <button id="toggle-btn" class="toggle-btn">◀</button>
+    </div>
+    <a href="#" class="menu-item">
+      <div>🏠</div>
+      <span>Dashboard</span>
+    </a>
+    <a href="#" class="menu-item">
+      <div>📅</div>
+      <span>Leave Management</span>
+    </a>
+    <a href="#" class="menu-item">
+      <div>📝</div>
+      <span>My Leaves</span>
+    </a>
+    <a href="#" class="menu-item">
+      <div>⚙</div>
+      <span>Settings</span>
+    </a>
+    <button id="logout" class="menu-item">
+      <div>🚪</div>
+      <span>Logout</span>
+    </button>
+  </div>
+  <main style="margin-left: 220px; padding: 20px;">
+    <h1>Welcome to the Dashboard</h1>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
