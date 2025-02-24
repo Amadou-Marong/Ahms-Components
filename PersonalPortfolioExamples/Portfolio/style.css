@@ -30,8 +30,34 @@ nav .nav-links a {
     color: white;
 }
 
+nav .nav-logo{
+    max-width: 100px;
+    display: flex;
+}
+
 nav .nav-logo img{
-    width: 100px;
+    width: 100%;
+}
+
+.link a {
+    position: relative;
+}
+
+.link a::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background-color: #1d4ed8;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.link a:hover::after {
+    transform: scaleX(1);
 }
 
 .btn {
@@ -47,5 +73,38 @@ nav .nav-logo img{
 .container {
     max-width: 1200px;
     margin: auto;
-    padding: 20px;
+    padding: 2rem 1rem;
 }
+
+
+/* Header Section */
+
+header .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+    color: white;
+}
+
+header .content article {
+    line-height: 1.5;
+    font-size: larger;
+}
+
+header .content article p {
+    margin: 1rem 0;
+}
+
+
+header .content article h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+
+.content .hero {
+    width: 100%;
+}
+
