@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #18181B;
+}
+
+nav {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .nav-links{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    font-weight: bold;
+}
+
+nav .nav-links a {
+    color: white;
+}
+
+nav .nav-logo img{
+    width: 100px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    border: none;
+    border-radius: .5rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
