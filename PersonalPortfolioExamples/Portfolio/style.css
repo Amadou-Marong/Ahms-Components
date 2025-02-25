@@ -241,3 +241,39 @@ header .content article h1 {
     color: #1d4ed8;
     margin-bottom: 1rem;
 }
+
+/* Footer Section */
+
+footer .logo {
+    max-width: 100px;
+}
+
+footer .logo .img {
+    width: 100%;
+}
+
+footer .content {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 400px repeat(3, 1fr)
+}
+
+footer .content .column {
+    
+}
+footer .content .column h4{
+    color: #1d4ed8;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+footer .content .column p{
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+footer .content .column > a {
+    display: block;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
