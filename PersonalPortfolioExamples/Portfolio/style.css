@@ -68,6 +68,7 @@ nav .nav-logo img{
     font-size: large;
     border: none;
     border-radius: .5rem;
+    cursor: pointer;
 }
 
 .container {
@@ -98,6 +99,7 @@ header .content {
 header .content article {
     line-height: 1.5;
     font-size: larger;
+    position: relative;
 }
 
 header .content article p {
@@ -118,7 +120,7 @@ header .content article h1 {
 
 /* Feature Section */
 
-.content h2 {
+.section-header {
     color: white;
     font-size: 2rem;
     font-weight: bold;
@@ -161,4 +163,54 @@ header .content article h1 {
 .features .card a {
     color: #1d4ed8;
     font-weight: bold;
+}
+
+
+/* Pricing Plans */
+
+.sub-header {
+    color: white;
+    font-size: 1rem;
+    font-weight: medium;
+    margin: 2rem 0;
+}
+
+.content .pricing {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.content .pricing .card {
+    padding: 2rem;
+    border-radius: .5rem;
+    text-align: center;
+    color: white;
+    line-height: 1.5;
+    border: 2px solid transparent;
+    background: linear-gradient(#242424, #242424) padding-box,
+                linear-gradient(to right, #1d4ed8, #ff9933) border-box;
+    border-radius: 8px;
+    transition: border 0.3s ease-in-out;
+}
+
+.content .pricing .card .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.content .pricing .card .content  h4{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #1d4ed8;
+}
+
+.content .pricing .card .content  h3{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #ff9933;
 }
