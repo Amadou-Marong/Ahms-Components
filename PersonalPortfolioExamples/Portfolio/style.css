@@ -88,7 +88,7 @@ nav .nav-logo img{
 
 header .blur {
     position: absolute;
-    box-shadow: 0 0 1000px 50px #1b3888;
+    box-shadow: 0 0 1000px 85px #1b3888;
     z-index: -100;
 }
 
@@ -282,6 +282,15 @@ footer .content .column > a {
 
 footer .content .column > a:hover {
     color: #1d4ed8;
+}
+
+footer .content .column .blur {
+    position: absolute;
+    box-shadow: 0 0 1000px 85px #1b3888;
+    z-index: -100;
+}
+footer .content .column {
+    position: relative;
 }
 
 footer .content .socials {
