@@ -79,7 +79,14 @@ nav .nav-logo img{
 
 /* Header Section */
 
+header .blur {
+    position: absolute;
+    box-shadow: 0 0 1000px 50px #1b3888;
+    z-index: -100;
+}
+
 header .content {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -98,6 +105,7 @@ header .content article p {
 }
 
 
+
 header .content article h1 {
     font-size: 3rem;
     font-weight: bold;
@@ -108,3 +116,49 @@ header .content article h1 {
     width: 100%;
 }
 
+/* Feature Section */
+
+.content h2 {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem 0;
+}
+
+.content .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.features .card {
+    background-color: #242424;
+    padding: 2rem;
+    border-radius: .5rem;
+    text-align: center;
+    color: white;
+    line-height: 1.5;
+}
+
+.features .card span {
+    display: inline-block;
+    font-size: 4rem;
+    color: #1d4ed8;
+    margin-bottom: 1rem;
+}
+
+.features .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.features .card p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.features .card a {
+    color: #1d4ed8;
+    font-weight: bold;
+}
