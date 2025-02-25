@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -173,6 +174,7 @@ header .content article h1 {
     font-size: 1rem;
     font-weight: medium;
     margin: 2rem 0;
+    max-width: 600px;
 }
 
 .content .pricing {
@@ -192,7 +194,13 @@ header .content article h1 {
     background: linear-gradient(#242424, #242424) padding-box,
                 linear-gradient(to right, #1d4ed8, #ff9933) border-box;
     border-radius: 8px;
-    transition: border 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.content .pricing .card:hover {
+    transform: scale(1.05);
+    border-color: #ff9933;
 }
 
 .content .pricing .card .content {
@@ -213,4 +221,10 @@ header .content article h1 {
     font-weight: bold;
     margin-bottom: 1rem;
     color: #ff9933;
+}
+
+.content .pricing .card .content >i {
+    font-size: 2rem;
+    color: #1d4ed8;
+    margin-bottom: 1rem;
 }
