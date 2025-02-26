@@ -343,6 +343,21 @@ footer .content .socials a:hover {
     }
     footer .content {
         gap: 1rem;
-        grid-template-columns: 200px repeat(1, 1fr)
+        grid-template-columns: 1fr 200px;
+    }
+        
+    footer .logo {
+        max-width: 80px;
+    } 
+    
+}
+
+@media (width < 400px) {
+    .content .features, .content .pricing {
+        grid-template-columns: repeat(1, 1fr)
+    }
+    footer .content {
+        gap: 1rem;
+        grid-template-columns: 150px repeat(1, 1fr)
     } 
 }
