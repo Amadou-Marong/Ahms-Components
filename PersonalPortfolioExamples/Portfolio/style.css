@@ -321,3 +321,21 @@ footer .content .socials a:hover {
     text-align: center;
     font-size: .8rem;
 }
+
+@media (width < 600px) {
+    nav .nav-links {
+        display: none;
+    }
+
+    nav .nav-logo{
+        max-width: 80px;
+        display: flex;
+    }
+
+    header .content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .content .features, .content .pricing {
+        grid-template-columns: repeat(2, 1fr)
+    }   
+}
