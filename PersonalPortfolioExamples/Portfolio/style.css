@@ -337,7 +337,7 @@ footer .content .socials a:hover {
 
 
 @media (width < 600px) {
-    
+
     nav .nav-links, nav .btn {
         display: none;
     }
