@@ -4,6 +4,8 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    scroll-behavior: smooth;
+    scrollbar-color: #1d4ed8 #18181B;
 }
 
 body{
@@ -349,7 +351,7 @@ footer .content .socials a:hover {
     footer .logo {
         max-width: 80px;
     } 
-    
+
 }
 
 @media (width < 400px) {
