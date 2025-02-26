@@ -314,7 +314,10 @@ footer .content .socials a:hover {
 
 .copyright {
     background-color: #242424;
-    /* max-width: 1200px; */
+}
+
+.copyright .content {
+    max-width: 1200px;
     margin: auto;
     padding: 1rem;
     color: #fff;
@@ -337,5 +340,9 @@ footer .content .socials a:hover {
     }
     .content .features, .content .pricing {
         grid-template-columns: repeat(2, 1fr)
-    }   
+    }
+    footer .content {
+        gap: 1rem;
+        grid-template-columns: 200px repeat(1, 1fr)
+    } 
 }
