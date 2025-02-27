@@ -34,6 +34,8 @@ header .info-text {
 
 header .info-text h1 {
     font-size: 5rem;
+    font-weight: 500;
+    font-family: 'Ubuntu';
 }
 
 header .info-text {
