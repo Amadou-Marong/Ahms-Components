@@ -67,14 +67,14 @@ header .info-text a i {
     margin-bottom: 1rem;
 }
 
-#about .header {
+#about .header, #features .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 4rem;
 }
 
-#about .header a {
+#about .header a, #features .header a {
     color: #ccc;
     text-decoration: none;
     cursor: pointer;
@@ -86,7 +86,7 @@ header .info-text a i {
     transition: all 0.3s ease-in-out;
 }
 
-#about .header a:hover {
+#about .header a:hover, #features .header a:hover {
     border: 1px solid #ccc; 
 }
 
@@ -109,4 +109,87 @@ header .info-text a i {
 
 #about .card .logo {
     width: 12rem;
+}
+
+#about .card .info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+}
+
+/* Features */
+
+#features .feature-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#features .feature-cards .card i {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+#features .feature-cards .card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    line-height: 1.8rem;
+    align-items: center;
+    background-color: #2b2f4b;
+    padding: 2rem;
+    border: 1px solid #2b2f4b;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out
+}
+
+#features .feature-cards .card:hover {    
+    border: 1px solid #ccc;
+}
+
+
+/* Media Queries */
+
+
+@media screen and (max-width: 720px) {
+    header .info-text h1{
+        font-size: 4rem;
+    }
+
+    header .info-text h3{
+        font-size: 1.1rem;
+    }
+
+    #about .card{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #about .card img{
+        max-width: 150px;
+        max-height: 150px;    
+    }
+
+    #features .feature-cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    #features .feature-cards .card:last-of-type {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #features .feature-cards{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
