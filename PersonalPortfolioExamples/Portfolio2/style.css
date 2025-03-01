@@ -153,6 +153,25 @@ header .info-text a i {
     border: 1px solid #ccc;
 }
 
+.scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    border: 1px solid #2b2f4b;
+    padding: 1rem 1.5rem;
+    color: #ccc;
+    background-color: #2b2f4b;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.scroll-top:hover {
+    border: 1px solid #ccc;
+}
+
+
 
 /* Media Queries */
 

@@ -73,3 +73,19 @@ particlesJS("particles", {
     },
     retina_detect: true
 });
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+document.addEventListener("scroll", function () {
+    var scrollTopButton = document.querySelector(".scroll-top");
+    if (window.scrollY > 600) {
+        scrollTopButton.style.display = "block";
+    } else {
+        scrollTopButton.style.display = "none";
+    }
+});
