@@ -48,10 +48,38 @@ header .info-text h3 {
     font-size: 1.5rem;
 }
 
-header .info-text a i {
-    margin-top: 5rem;
+header .info-text .scroll {
+    border: 1px solid #2b2f4b;
+    height: 50px;
+    width: 50px;
     color: #ccc;
+    background-color: #2b2f4b;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    animation: pulse 2s infinite
+}
+
+header .info-text .scroll:hover {
+    border: 1px solid #ccc;
+}
+
+@keyframes pulse {
+    0%, 100%{
+        opacity: 1;
+    }
+    15%, 45%{
+        opacity: 1;
+    }
+    60%{
+        box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.1);
+        opacity: 0;
+    }
 }
 
 .particles {
@@ -159,12 +187,22 @@ header .info-text a i {
     right: 2rem;
     cursor: pointer;
     border: 1px solid #2b2f4b;
-    padding: 1rem 1.5rem;
+    height: 50px;
+    width: 50px;
     color: #ccc;
     background-color: #2b2f4b;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     border-radius: 100%;
     transition: all 0.3s ease-in-out;
+}
+
+.scroll {
+    cursor: pointer;
+    color: #ccc;
+    background-color: #2b2f4b;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 100%;
+    transition: all 0.3s ease-in-out;   
 }
 
 .scroll-top:hover {
