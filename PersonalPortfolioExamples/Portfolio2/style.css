@@ -56,6 +56,7 @@ header .info-text .scroll {
     background-color: #2b2f4b;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     border-radius: 50%;
+    margin-top: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,7 +89,7 @@ header .info-text .scroll:hover {
     height: 100vh;
 }
 
-#about .header h1 {
+#about .header h1, #features .header h1 {
     font-size: 1.5rem;
     font-family: 'Ubuntu';
     text-transform: uppercase;
@@ -236,13 +237,11 @@ header .info-text .scroll:hover {
     #features .feature-cards{
         grid-template-columns: repeat(2, 1fr);
     }
-    
-}
 
-@media screen and (max-width: 600px) {
     #features .feature-cards .card:last-of-type {
         grid-column: span 2;
     }
+    
 }
 
 @media screen and (max-width: 500px) {
