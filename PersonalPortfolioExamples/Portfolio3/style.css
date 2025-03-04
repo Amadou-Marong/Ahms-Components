@@ -74,6 +74,7 @@ body {
     border: 1px solid;
     border-radius: .5rem;
     cursor: pointer;
+    transition: all .3s ease;
 }
 
 .text button:hover {
@@ -98,7 +99,8 @@ body {
 
 .logo {
     display: inline-block;
-    font-style: 30px;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 .navbar .nav-links {
@@ -109,3 +111,14 @@ body {
     gap: 2rem;
 }
 
+@media screen and (max-width: 1024px) {
+    .content {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 720px){
+    .image-wrapper img {
+        max-width: 300px;
+        margin-top: 10vh;
+    }
+}
