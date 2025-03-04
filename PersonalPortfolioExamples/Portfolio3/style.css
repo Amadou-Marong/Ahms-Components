@@ -107,8 +107,8 @@ body {
     display: flex;
     float: right;
     list-style: none;
-    font-size: 12px;
-    gap: 2rem;
+    font-size: 17px;
+    gap: 1rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -117,8 +117,15 @@ body {
     }
 }
 @media screen and (max-width: 720px){
+    .logo{
+        font-size: 22px;
+    }
+
+    .navbar .nav-links {
+        font-size: 13px;
+    }
+
     .image-wrapper img {
         max-width: 300px;
-        margin-top: 10vh;
     }
 }
