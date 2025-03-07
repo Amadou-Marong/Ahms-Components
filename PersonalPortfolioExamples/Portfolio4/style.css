@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', 'sans-serif';
+}
+
+body {
+    /* dark background */
+    background-color: #37373d;
+    color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 2rem 1rem;
+    margin: auto;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+header nav .logo a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffb742;
+}
+
+header nav .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+header nav .nav-links a {
+    color: #f8f8f8;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 300ms ease;
+}
+
+header nav .nav-links a:hover {
+    color: #ffb742;
+}
+
+header nav .btn {
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: .5rem;
+    color: #37373d;
+    font-weight: bold;
+    font-size: 1rem;
+    background: #ffb742;
+}
+
+#home {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.8;
+}
+
+#home h2 {
+    font-size: 1.8rem;
+}
+
+
+
+#home h2 span {
+    color: #ffb742;
+}
+
+#home h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
