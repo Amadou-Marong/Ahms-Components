@@ -67,14 +67,13 @@ header nav .btn {
     display: flex;
     flex-direction: column;
     align-items: center;
-    line-height: 1.8;
+    line-height: 1.2;
+    gap: 2rem;
 }
 
 #home h2 {
     font-size: 1.8rem;
 }
-
-
 
 #home h2 span {
     color: #ffb742;
@@ -83,4 +82,9 @@ header nav .btn {
 #home h1 {
     font-size: 2.5rem;
     text-align: center;
+}
+
+#home .logo {
+    margin-top: 4rem;
+    width: 150px;
 }
